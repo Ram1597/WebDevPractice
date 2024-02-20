@@ -12,25 +12,34 @@
             width: 100%;
             border:1px black solid;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: end;
+            
             
 
         }        
 
-        .maindiv div:nth-child(even){
+        .maindiv div:nth-child(1){
             height: 100px;
             width: 100px;
-            background-color: blueviolet;
+            background-color: green;
+            order: 1000;
             
           
         }
-        .maindiv div:nth-child(odd){
+        .maindiv div:nth-child(2){
             height: 100px;
             width: 100px;
             background-color: cyan;
+            order: 1;
            
+        }
+        .maindiv div:nth-child(3){
+            height: 100px;
+            width: 100px;
+            background-color: blueviolet;
+           
+           
+            
+          
         }
     
     </style>
