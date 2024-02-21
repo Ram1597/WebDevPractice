@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .container{
+            background-color: aliceblue;
+            display: grid;
+            grid-template-columns:100px 100px;
+            grid-template-rows: 100px 100px;
+            column-gap: 10px;
+            row-gap: 10px;
+
+        }
+
+        .container div:nth-child(even)
+        {
+            background-color: cyan;
+        }
+
+        .container div:nth-child(odd)
+        {
+            background-color: gold;
+        }
+        
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>
