@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed&Sticky Position</title>
+
+    <style>
+
+        body{
+            height:1500px;
+        }
+
+        #main{
+
+            background-color: salmon;
+            height: 50px;
+            width: 100%;
+            display: flex;
+            position: sticky;
+            top:5px;
+
+            
+        }
+
+        .sub{
+
+            border: 1px red solid;
+            background-color: cyan;
+            width: 20%;
+            text-align: center;
+            padding: 15px;
+        
+        }
+        .sub:hover{
+            cursor: pointer;
+            background-color: black;
+            color:aliceblue;
+        }
+
+        #help{
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+
+        }
+       
+        #help>img{
+            border: 1px black solid;
+            height: 50px;
+            width: 50px;
+            border-radius:50px;
+        }
+        #help>img:hover{
+            border: 1px red solid;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+        <div id="main">
+            <div class="sub">Home</div>
+            <div class="sub">Services</div>
+            <div class="sub">Products</div>
+            <div class="sub">About Us</div>
+            <div class="sub">Contact Us</div>
+        </div>
+        <div>
+
+            <h1 style="text-align: center;"> Welcome To The Website </h1>
+       
+        </div>
+
+        <div id="help">
+            <img src="https://www.shutterstock.com/image-vector/bell-icon-trendy-flat-style-260nw-407306239.jpg" alt="Bell Image">
+        </div>
+</body>
+</html>
