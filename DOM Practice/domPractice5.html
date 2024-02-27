@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <select id="Option">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+
+    <button onclick="function1()">Submit</button>
+
+    <h3 id="outputval"></h3>
+
+</body>
+</html>
+
+<script>
+
+    function function1()
+    {
+        document.getElementById("outputval").innerText="Your hava Selected : "+document.getElementById("Option").value;
+    }
+
+</script>

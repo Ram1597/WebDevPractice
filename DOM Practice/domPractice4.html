@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputvalue" placeholder="input">
+    <button onclick="function1()">Submit</button>
+
+    <p id="outputpara"></p>
+</body>
+</html>
+
+<script>
+
+        function function1()
+        {
+            document.getElementById("outputpara").innerText=document.getElementById("inputvalue").value;   
+        }
+
+</script>
