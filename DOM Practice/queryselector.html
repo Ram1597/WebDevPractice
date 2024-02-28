@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+     <div id="box">
+        Hello World
+    </div>
+
+    <div class="class1">
+        Iam Div 1
+    </div>
+
+    <div class="class1">
+        Iam Div 2
+    </div>
+
+</body>
+</html>
+
+<script>
+
+        let x=   document.querySelector("#box");
+        console.log("Box Id",x);
+
+        //Returning Only First Class
+        let y=document.querySelector(".class1");
+        console.log("class",y);
+
+        y=document.querySelectorAll(".class1");
+        console.log(y);
+
+</script>

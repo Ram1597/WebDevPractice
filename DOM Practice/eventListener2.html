@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: cyan;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>
+
+<script>
+
+    document.querySelector("div").addEventListener("mouseenter",enter);
+    document.querySelector("div").addEventListener("mouseleave",leave);
+
+    function enter()
+    {
+        // document.querySelector("div").style="background-color:red;cursor:pointer";  -->Or Use . Operator
+        document.querySelector("div").style.backgroundColor="red";
+        document.querySelector("div").style.cursor="pointer";
+    }
+    function leave()
+    {
+        document.querySelector("div").style="background-color:cyan";
+    }
+
+</script>
