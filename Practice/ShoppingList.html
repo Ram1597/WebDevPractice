@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <style>
+        div>h1{
+            text-align: center;
+            color:red;
+        }
+        div{
+            
+            height: 100px;
+            width: 100%;
+            background-color: cyan;
+            border-radius: 20px;
+            margin-bottom: 100px;
+        }
+        div>form{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            
+        }
+        #category{
+            text-align: center;
+        }
+        body{
+            background-color: lightcyan;
+        }
+        table{
+            width: 800px;
+            margin:auto;
+
+        }
+        tbody{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+        
+       
+        <div id="maindiv">
+        <h1>Welcome To Grocery List</h1>
+        <form id="formdata">
+            <input id="productname" type="text" placeholder="Product Name">
+            <select id="category" id="productname" >
+                <option> ---- Product Category ---- </option>
+                <option value="Grocery">Grocery</option>
+                <option value="Electronic">Electronic</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Home Appliance">Home Appliance</option>
+            </select>
+            <input id="brand" type="text" placeholder="Brand">
+            <input id="price" type="number" placeholder="Price">
+            <input type="submit">
+        </form>
+        </div>
+
+        <h3 style="text-align: center;color: green;">Total Price : </h3>
+        <table border="1" cellspacing="0">
+            <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+
+            </tbody>
+
+        </table>
+
+       
+</body>
+</html>
+
+<script>
+
+            document.querySelector("#formdata").addEventListener("submit",submitFn);
+
+            let arr=[];
+            let totalPrice=0;
+
+            function submitFn()
+            {
+                event.preventDefault();
+                totalPrice=0;
+                let object={
+                pname:document.querySelector("#productname").value,
+                pcategory:document.querySelector("#category").value,
+                pbrand:document.querySelector("#brand").value,
+                pprice:document.querySelector("#price").value,
+                
+                }
+                arr.push(object);
+
+                document.querySelector("tbody").innerHTML="";
+
+                arr.map(function(e){
+
+                    
+
+                    let tablerow=document.createElement("tr");
+                    let tabledata1=document.createElement("td");
+                    let tabledata2=document.createElement("td");
+                    let tabledata3=document.createElement("td");
+                    let tabledata4=document.createElement("td");
+                    let tabledata5=document.createElement("td");
+                    
+                    tabledata1.innerText=(e.pname);
+                    tabledata2.innerText=(e.pcategory);
+                    tabledata3.innerText=(e.pbrand);
+                    tabledata4.innerText=(e.pprice);
+                    totalPrice+=Number(e.pprice);
+                   
+                    tabledata5.innerText="Delete";
+                    tabledata5.style="cursor:pointer";
+
+                    tabledata5.addEventListener("click",deleteFun);
+                    function deleteFun()
+                    {
+                        
+                        event.target.parentNode.remove();
+                        totalPrice=totalPrice-Number(e.pprice);
+                        document.querySelector("h3").innerText="Total Price : "+totalPrice;
+                
+                    }
+                
+                    
+                    tablerow.append(tabledata1,tabledata2,tabledata3,tabledata4,tabledata5);
+                    document.querySelector("tbody").append(tablerow);
+
+                    document.querySelector("h3").innerText="Total Price : "+totalPrice;
+                });
+                
+            }
+
+            
+            
+
+            
+
+</script>
