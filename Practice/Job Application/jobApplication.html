@@ -45,10 +45,10 @@
 
             document.querySelector("#formtag").addEventListener("submit",myFunction);
 
-            let arr=[];
+            let arr= JSON.parse(localStorage.getItem("jobApp")) || [];
             function myFunction()
             {
-                
+
                 event.preventDefault();
                 let object={
                     name:document.querySelector("#name").value,
