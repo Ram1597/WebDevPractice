@@ -57,16 +57,20 @@
 
            
 
-           let arr= JSON.parse(localStorage.getItem("jobApp"));
+           
            
 
            function display()
            {
+
             event.preventDefault();
             
-           {
-            
-                for(let i=0;i<arr.length;i++)
+            let data=JSON.parse(localStorage.getItem("jobApp"));
+           
+            if(data!== null)
+            {
+            let arr=JSON.parse(localStorage.getItem("jobApp"));
+            for(let i=0;i<arr.length;i++)
             {
                 let tr=  document.createElement("tr");
                 let td1= document.createElement("td");
@@ -86,8 +90,10 @@
                
             }
             }
-            
-           }
+                
+               
+            }
+        
 
            
 
