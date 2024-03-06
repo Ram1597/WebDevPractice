@@ -20,8 +20,8 @@
         <form id="formtag">
 
         <h3>Enter Your Application Details</h3>
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
+        <input type="text" placeholder="Name" id="name">
+        <input type="email" placeholder="Email" id="email">
         <select name="role " id="role">
 
             <option value="FSD">FSD</option>
@@ -29,7 +29,7 @@
             <option value="BackEnd">BackEnd</option>
 
         </select>
-        <input type="number" placeholder="Enter Exptected Salary">
+        <input type="number" placeholder="Enter Exptected Salary" id="salary">
         <input id="submit" type="submit">
 
 
@@ -42,5 +42,29 @@
 
 <script>
 
-    localStorage.setItem("First","1");
+
+            document.querySelector("#formtag").addEventListener("submit",myFunction);
+
+            let arr=[];
+            function myFunction()
+            {
+                
+                event.preventDefault();
+                let object={
+                    name:document.querySelector("#name").value,
+                    email:document.querySelector("#email").value,
+                    role:document.querySelector("#role").value,
+                    salary:document.querySelector("#salary").value,
+                }
+                arr.push(object);
+
+
+                localStorage.setItem("jobApp",JSON.stringify(arr));
+
+            }
+
+           
+
+
+
 </script>

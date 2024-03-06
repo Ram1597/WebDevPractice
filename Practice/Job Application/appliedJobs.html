@@ -5,12 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Applied Jobs</title>
     <link rel="stylesheet" href="./style.css">
+
+    <style>
+
+        table{
+            margin: 70px auto;
+            width: 1000px;
+        }
+        table>thead{
+            background-color: lightgreen;
+        }
+        #tablebody{
+            text-align: center;
+        }
+    </style>
 </head>
-<body>
+<body onload="display()">
     <div id="links">
         <div><a href="./jobApplication.html">Home</a></div>
         <div><a href="./appliedJobs.html">Applied Jobs</a></div>
         <div><a href="./bookmarks.html">Bookmarks</a></div>
     </div>
+
+
+
+    <table border="1px" cellspacing="0">
+
+        <tr>
+            <thead>
+                <th >Name</th>
+                <th >E-mail</th>
+                <th>Role</th>
+                <th width="120px">Exptected Salary</th>
+                <th width="100px">Add To Bookmarks</th>
+            </thead>
+
+            <tbody id="tablebody">
+
+
+            </tbody>
+        </tr>
+
+
+    </table>
 </body>
 </html>
+
+
+<script>
+
+
+           
+
+           let arr= JSON.parse(localStorage.getItem("jobApp"));
+           
+
+           function display()
+           {
+            event.preventDefault();
+            
+           {
+            
+                for(let i=0;i<arr.length;i++)
+            {
+                let tr=  document.createElement("tr");
+                let td1= document.createElement("td");
+                let td2= document.createElement("td");
+                let td3= document.createElement("td");
+                let td4= document.createElement("td");
+                let td5= document.createElement("td");
+               td1.innerText=arr[i].name;
+               td2.innerText =arr[i].email;
+               td3.innerText = arr[i].role;
+               td4.innerText = arr[i].salary;
+               td5.innerText="Delete";
+               td5.style="cursor:pointer";
+               tr.append(td1,td2,td3,td4,td5);
+
+               document.querySelector("#tablebody").append(tr);
+               
+            }
+            }
+            
+           }
+
+           
+
+
+</script>
