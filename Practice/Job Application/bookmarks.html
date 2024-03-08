@@ -5,12 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookmarks</title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+        table {
+          margin: 70px auto;
+          width: 1000px;
+          border-collapse: collapse;
+        }
+        table > thead {
+          background-color: lightgreen;
+        }
+        #tablebody {
+          text-align: center;
+        }
+      </style>
 </head>
 <body>
+
     <div id="links">
         <div><a href="./jobApplication.html">Home</a></div>
         <div><a href="./appliedJobs.html">Applied Jobs</a></div>
         <div><a href="./bookmarks.html">Bookmarks</a></div>
     </div>
+
+
+    <table border="1px" cellspacing="0">
+        <tr>
+          <thead height="40px">
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Role</th>
+            <th width="120px">Exptected Salary</th>
+            <th width="100px">Delete</th>
+          </thead>
+  
+          <tbody id="tablebody"></tbody>
+        </tr>
+      </table>
 </body>
 </html>
+
+<script>
+
+function displayBookmarks() {
+  
+  let data = JSON.parse(localStorage.getItem("bookmark"));
+
+  console.log(data);
+  if (data !== null) {
+    
+      data.forEach(function (element){
+
+      let tr = document.createElement("tr");
+      let td1 = document.createElement("td");
+      let td2 = document.createElement("td");
+      let td3 = document.createElement("td");
+      let td4 = document.createElement("td");
+      let td5 = document.createElement("td");
+      td1.innerText = element.name;
+      td2.innerText = element.email;
+      td3.innerText = element.role;
+      td4.innerText = element.salary;
+      
+      td5.innerText = "Delete";
+      td5.style = "cursor:pointer";
+
+    //   td5.addEventListener("click",function(){addBookMark(element)});
+
+      tr.append(td1, td2, td3, td4, td5);
+      document.querySelector("#tablebody").append(tr);
+
+
+      }  
+      );  
+
+  }
+  
+}
+
+displayBookmarks();
+
+
+</script>
