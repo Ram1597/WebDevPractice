@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+
+    // let grandfather={
+    //     name:"goku",
+    //     lastName:"dragon",
+    // }
+
+    // let father={
+    //     name:"gohan",
+    // }
+    // father=Object.create(grandfather);
+
+    // console.log(father.name);
+
+    // function student(batchNo,techStack)
+    // {
+    //     this.batchNo=batchNo;
+    //     this.techStack=techStack;
+    // }
+
+    // student.prototype.school="PVP";
+    // student.prototype.country="India";
+
+    // let s1=new student(1,"MERN");
+    // console.log(s1);
+    function person(fname,lname)
+    {
+        this.fname=fname;
+        this.lname=lname;
+    }
+    person.prototype.temp="Hello";
+
+    function student(fname,lname,name,rollno)
+    {
+        person.apply(this,[fname,lname]);
+        this.name=name;
+        this.rollno=rollno;
+    }
+    student.prototype=Object.create(person.prototype);
+    student.prototype.school="PVP";
+    student.prototype.display=function() { console.log(this.name+" "+this.rollno);};
+
+
+    let s1=new student("m","ramesh","ramesh",1);
+    console.log(s1);
+
+
+
+
+
+
+
+</script>
