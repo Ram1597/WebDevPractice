@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Welcome To The Store</h1>
+    <div id="features">
+        <select>
+            <option>Sort By</option>
+            <option value="High To Low">High To Low</option>
+            <option value="Low To High">Low To High</option>
+        </select>
+        <input id="inputBox" type="text">
+    </div>
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+
+        getData();
+        let objData;
+        async function getData()
+        {
+            try{
+            let data= await fetch("https://fakestoreapi.com/products");
+            objData= await data.json();
+            console.log(objData);
+            appendData(objData);
+            }
+            catch(e)
+            {
+                console.log(e);
+            }
+            
+        }
+
+        let container=document.querySelector("#container");
+        function appendData(objData)
+        {
+            objData.map(function(element){
+                
+                let div=document.createElement("div");
+                div.setAttribute("class","items");
+                let {title,price,image}=element;
+                let name=document.createElement("p");
+                name.innerText=title;
+                let img=document.createElement("img");
+                img.setAttribute("src",image);
+                let pPrice=document.createElement("p");
+                pPrice.innerText=price;
+                div.append(img,name,price);
+                container.append(div);
+            });
+
+        }
+    
+
+        
+
+</script>
+

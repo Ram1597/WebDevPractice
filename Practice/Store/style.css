@@ -1,0 +1,47 @@
+h1{
+    color: lightcoral;
+    text-align: center;
+}
+#features{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px;
+    
+}
+#features>select{
+    height: 40px;
+    width: 100px;
+    background-color: lightcyan;
+    border-radius: 5px;
+    text-align: center;
+}
+#features>select:hover{
+    cursor: pointer;
+}
+#inputBox{
+    border-radius: 5px;
+    height: 35px;
+    width: 300px;
+    font-size: 20px;
+}
+img{
+    height: 200px;
+    
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    
+    
+}
+.items{
+    height: 300px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.items:hover{
+    cursor: pointer;
+}
