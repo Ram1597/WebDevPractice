@@ -11,8 +11,16 @@ body{
 }
 #navbar>div:hover{
     cursor: pointer;
+    
 }
-
+#navbar a{
+    color: white;
+    text-decoration: none;
+}
 #logo{
     height: 60px;
+}
+#sliderMenu img{
+    
+    width: 100%;
 }
