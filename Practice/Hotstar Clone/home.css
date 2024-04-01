@@ -1,5 +1,13 @@
 body{
     margin: 0px;
+    background-color: black;
+}
+.headings{
+    margin-top:50px;
+    margin-bottom: 20px;
+    color:white;
+    font-size: 30px;
+    font-weight: bold;
 }
 #navbar{
     background-color: black;
@@ -23,4 +31,18 @@ body{
 #sliderMenu img{
     
     width: 100%;
+}
+#homepageshows{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+}
+#homepageshows img{
+    height: 400px;
+    width: 300px;
+    border-radius: 20px;
+}
+img:hover{
+    cursor: pointer;
+   
 }
