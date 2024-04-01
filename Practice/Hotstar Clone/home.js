@@ -20,6 +20,7 @@ function sliderFunction()
     i++;
    },2000);
 
+   
    showMovies();
 
     
