@@ -1,3 +1,8 @@
+import navbar from "./navbar.js"
+let navbarData=document.getElementById("navbar");
+navbarData.innerHTML=navbar();
+
+
 setTimeout(sliderFunction,500);
 
 function sliderFunction()
@@ -20,7 +25,7 @@ function sliderFunction()
     i++;
    },2000);
 
-   
+
    showMovies();
 
     
